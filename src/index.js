@@ -6,10 +6,10 @@ import ReactDOM from "react-dom";
 
 
 //import custom components here
-import  SearchBar from "./SearchBar";
+import  SearchBar from "./components/SearchBar";
 
-import ImageList from "./ImageList";
-import App from "./App";
+import ImageList from "./components/ImageList";
+import App from "./components/App";
 
 
 

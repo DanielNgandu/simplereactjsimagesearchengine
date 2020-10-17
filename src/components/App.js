@@ -11,6 +11,7 @@ import axios from "axios";
 import SearchBar from "./SearchBar";
 
 import ImageList from "./ImageList";
+import unsplash from "../api/unsplash";
 
 class App extends React.Component {
   state = { images: [] };
@@ -20,20 +21,16 @@ class App extends React.Component {
 
     console.log(searchkeyword);
     //pass searched word to axios
-    const response = await axios.get(
+    const response = await unsplash.get(
       "https://api.unsplash.com//search/photos",
       {
         params: { query: searchkeyword },
-        headers: {
-          Authorization:
-            "Client-ID zToMPnfaitCW3AK-jp8A91XMKekYTL0snz2rj50b-XM",
-        },
         //   console.warn(resp.data);
       }
     );
 
     //print response
-    console.log(response.data.results);
+    // console.log(response.data.results);
 
     //set state
     this.setState({ images: response.data.results });
@@ -44,7 +41,7 @@ class App extends React.Component {
       <div>
         <SearchBar onSubmitProp={this.onSearchSubmit} />
         <p>Found: {this.state.images.length} images.</p>
-        <ImageList />
+        <ImageList images ={this.state.images} />
       </div>
     );
   }
