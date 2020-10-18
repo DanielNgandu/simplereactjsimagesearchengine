@@ -6,16 +6,17 @@ import ReactDOM from "react-dom";
 import SearchBar from "./SearchBar";
 
 
-//class based component
+//function based component
 const ImageList =props=> {
     const images = props.images.map(image =>
-        <img key={image.id} alt={image.description} className="ui small image" src={image.urls.regular}/>
+            <div className="four wide column">
+                <img key={image.id} alt={image.description} className="ui small image" src={image.urls.regular}/></div>
     )
         return (
-            <div>
-                <div className="ui small images">
+            <div className="ui grid container">
+
                         {images}
-                </div>
+
             </div>
         );
 

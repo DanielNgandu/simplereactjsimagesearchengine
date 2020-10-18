@@ -5,10 +5,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 
-//import custom components here
-import  SearchBar from "./components/SearchBar";
 
-import ImageList from "./components/ImageList";
 import App from "./components/App";
 
 
